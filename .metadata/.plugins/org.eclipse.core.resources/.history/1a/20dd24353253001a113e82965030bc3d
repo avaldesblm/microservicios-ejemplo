@@ -1,0 +1,10 @@
+package com.microservices.example.app.report.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class ReportController {
+	
+	private ReportService reportService; 
+
+}

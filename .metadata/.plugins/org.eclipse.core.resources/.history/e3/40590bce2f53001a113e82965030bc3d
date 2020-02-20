@@ -1,0 +1,8 @@
+package com.microservices.example.app.report.models;
+
+public interface ReportService {
+	
+	public List<Report> findAll();
+	public Report findAll();
+	
+}

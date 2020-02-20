@@ -1,0 +1,2 @@
+spring.application.name=servicio-report
+spring.clod.config.uri=http://localhost:8888

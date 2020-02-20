@@ -1,0 +1,10 @@
+package com.microservices.example.app.report.models;
+
+import java.util.List;
+
+public interface ReportService {
+	
+	public List<Report> findAll();
+	public Report findById(Long id);
+	
+}

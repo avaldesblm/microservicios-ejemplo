@@ -1,0 +1,8 @@
+package com.microservices.example.app.report.models;
+
+public class Report {
+	
+	private transaction trx;
+	private Double totalAmount;
+
+}

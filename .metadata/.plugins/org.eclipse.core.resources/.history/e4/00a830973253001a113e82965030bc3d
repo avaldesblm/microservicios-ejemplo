@@ -1,0 +1,28 @@
+package com.microservices.example.app.report.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+import com.microservices.example.app.report.models.Report;
+import com.microservices.example.app.report.models.service.ReportService;
+
+@RestController
+public class ReportController {
+	
+	@Autowired
+	private ReportService reportService;
+	
+	@GetMapping("/getReports")
+	public List<Report> getReports(){
+		return reportService.findAll();
+	}
+	
+	@GetMapping("/getReport/{id}")
+	public Report getReport(@PathVariable Long id) {
+		
+	}
+
+}

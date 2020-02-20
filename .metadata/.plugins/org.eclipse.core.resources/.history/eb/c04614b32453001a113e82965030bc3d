@@ -1,0 +1,6 @@
+INSERT INTO transaction (devId, amount, transDateTime) VALUES(100180,100,NOW());
+INSERT INTO transaction (devId, amount, transDateTime) VALUES(100180,300,NOW());
+INSERT INTO transaction (devId, amount, transDateTime) VALUES(100124,500,NOW());
+INSERT INTO transaction (devId, amount, transDateTime) VALUES(100156,100,NOW());
+INSERT INTO transaction (devId, amount, transDateTime) VALUES(100458,200,NOW());
+INSERT INTO transaction (devId, amount, transDateTime) VALUES(100478,200,NOW());

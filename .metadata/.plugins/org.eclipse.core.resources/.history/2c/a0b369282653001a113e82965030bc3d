@@ -1,0 +1,6 @@
+INSERT INTO trx (devId, amount, transDateTime, reference) VALUES(100180,100,NOW(),'5510101023');
+INSERT INTO trx (devId, amount, transDateTime, reference) VALUES(100180,300,NOW(),'5510101025');
+INSERT INTO trx (devId, amount, transDateTime, reference) VALUES(100124,500,NOW(),'5510101024');
+INSERT INTO trx (devId, amount, transDateTime, reference) VALUES(100156,100,NOW(),'5510101024');
+INSERT INTO trx (devId, amount, transDateTime, reference) VALUES(100458,200,NOW(),'5510101021');
+INSERT INTO trx (devId, amount, transDateTime, reference) VALUES(100478,200,NOW(),'5510101025');

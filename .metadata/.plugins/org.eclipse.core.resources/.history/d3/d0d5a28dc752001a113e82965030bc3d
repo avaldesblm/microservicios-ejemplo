@@ -1,0 +1,2 @@
+spring.application.name=servicio-telcel0
+server.port=8080

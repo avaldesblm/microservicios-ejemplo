@@ -1,0 +1,10 @@
+# Spring Clod Config
+
+# Config to connect to the config server in order to req its config
+spring.application.name=servicio-report
+# dev or prod (8005 / 8007)
+spring.profiles.active=dev
+spring.clod.config.uri=http://localhost:8888
+
+# Indicar que endpoint se pueden actualizar en tiempo real (en este caso, todos)
+management.endpoints.web.exposure.include=*

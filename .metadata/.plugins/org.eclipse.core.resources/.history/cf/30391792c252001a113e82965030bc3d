@@ -1,0 +1,5 @@
+package com.microservices.example.app.telcel0.models.trx;
+
+public class transaction {
+
+}

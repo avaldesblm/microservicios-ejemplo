@@ -1,0 +1,6 @@
+package com.microservices.example.app.telcel0.controllers;
+
+@RestController //Convertir a json lo que regresa el método handler
+public class trxController {
+
+}

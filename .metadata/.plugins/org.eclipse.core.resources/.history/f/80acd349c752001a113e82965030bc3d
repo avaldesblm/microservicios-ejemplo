@@ -1,0 +1,23 @@
+package com.microservices.example.app.telcel0.controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.microservices.example.app.telcel0.models.service.ITrxService;
+import com.microservices.example.app.telcel0.models.trx.transaction;
+
+@RestController //Convertir a json lo que regresa el método handler
+public class trxController {
+	
+	@Autowired
+	private ITrxService trxService;
+	
+	@GetMapping("/getTransactions")
+	public List<transaction> getTrx(){
+		return trxService.findAll();
+	}
+	
+}

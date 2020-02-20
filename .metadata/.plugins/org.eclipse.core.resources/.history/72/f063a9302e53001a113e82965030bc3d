@@ -1,0 +1,19 @@
+package com.microservices.example.app.report.models;
+
+public class Report {
+	
+	private transaction trx;
+	private Double comission;
+	
+	public transaction getTrx() {
+		return trx;
+	}
+	public void setTrx(transaction trx) {
+		this.trx = trx;
+	}
+	
+	public Double getComission() {
+		
+	}
+
+}

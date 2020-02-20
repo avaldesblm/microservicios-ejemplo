@@ -1,0 +1,36 @@
+package com.microservices.example.app.report.models.service;
+
+import java.util.List;
+import java.util.stream.Collectors;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.microservices.example.app.report.clientes.TransactionClientRest;
+import com.microservices.example.app.report.models.Report;
+
+/*
+ * Class implemented with feign client 
+*/
+@Service("serviceFeign")
+public class ReportServiceFeign implements ReportService {
+	
+	@Autowired
+	private TransactionClientRest trxClientRest;
+
+	@Override
+	public List<Report> findAll() {
+		return trxClientRest.getTransactions().stream().map(p -> new Report(p)).collect(Collectors.toList());
+	}
+
+	@Override
+	public Report findById(Long id) {
+		return new Report(trxClientRest.getTrxById(id));
+	}
+
+	@Override
+	public Report save(Report report) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

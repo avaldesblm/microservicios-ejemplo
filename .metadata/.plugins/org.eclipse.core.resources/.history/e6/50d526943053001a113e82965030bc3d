@@ -1,0 +1,26 @@
+package com.microservices.example.app.report.models.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+import com.microservices.example.app.report.models.Report;
+
+@Service
+public class ReportServiceImpl implements ReportService {
+	
+	@Autowired
+	private RestTemplate clienteRest;
+
+	@Override
+	public List<Report> findAll() {
+		return null;
+	}
+
+	@Override
+	public Report findById(Long id) {
+		return null;
+	}
+
+}

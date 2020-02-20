@@ -1,0 +1,28 @@
+package com.microservices.example.app.report.models;
+
+public class Report {
+	
+	private transaction trx;
+	private int device;
+	private Double totalAmount;
+	
+	public transaction getTrx() {
+		return trx;
+	}
+	public void setTrx(transaction trx) {
+		this.trx = trx;
+	}
+	public int getDevice() {
+		return device;
+	}
+	public void setDevice(int device) {
+		this.device = device;
+	}
+	public Double getTotalAmount() {
+		return totalAmount;
+	}
+	public void setTotalAmount(Double totalAmount) {
+		this.totalAmount = totalAmount;
+	}
+
+}

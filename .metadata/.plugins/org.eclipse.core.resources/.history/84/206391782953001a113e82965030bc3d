@@ -1,0 +1,1 @@
+INSERT INTO trx (device, amount, trans_datetime, reference) VALUES('Alex',100,NOW());

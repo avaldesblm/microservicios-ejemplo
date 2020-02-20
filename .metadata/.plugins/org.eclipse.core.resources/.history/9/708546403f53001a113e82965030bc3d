@@ -1,0 +1,5 @@
+spring.application.name=servicio-report
+server.port=8002
+
+# Without Eureka it is necessary to set explicity the servers info
+servicio-telcel0.ribbon.listOfServers=localhost:8001,localhost:9001

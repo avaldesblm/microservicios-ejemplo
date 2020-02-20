@@ -1,0 +1,4 @@
+spring.application.name=servicio-report
+server.port=8002
+
+servicio-telcel0.ribbon.listOfServers=localhost:8001,localhost:9001

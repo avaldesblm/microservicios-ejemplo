@@ -1,0 +1,5 @@
+spring.application.name=servicio-telcel0
+server.port=${PORT:0}
+
+# Optional if eureka server is in the same server of the clients 
+eureka.client.service-url.defaultZone=http://localhost:8761/eureka

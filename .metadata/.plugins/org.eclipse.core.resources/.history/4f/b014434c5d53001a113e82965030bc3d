@@ -1,0 +1,8 @@
+spring.application.name=servicio-zuul-server
+server.port=8090
+ 
+eureka.client.service-url.defaultZone=http://localhost:8761/eureka
+
+# Config the routes that points to the services
+zuul.routes.trx.service-id=servicio-telcel0
+zuul.routes.trx.path=/api/transactions/**

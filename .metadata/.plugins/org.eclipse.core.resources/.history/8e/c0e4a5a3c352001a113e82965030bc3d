@@ -1,0 +1,7 @@
+package com.microservices.example.app.telcel0.models.dao;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface trxDao extends CrudRepositoryitory<transaction, Long>{
+
+}

@@ -1,0 +1,1 @@
+INSERT INTO trx (reference, amount, transDateTime) VALUES('Alex',100,NOW());

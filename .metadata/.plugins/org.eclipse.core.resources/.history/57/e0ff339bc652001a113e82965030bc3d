@@ -1,0 +1,11 @@
+package com.microservices.example.app.telcel0.controllers;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController //Convertir a json lo que regresa el método handler
+public class trxController {
+	
+	
+	
+	
+}

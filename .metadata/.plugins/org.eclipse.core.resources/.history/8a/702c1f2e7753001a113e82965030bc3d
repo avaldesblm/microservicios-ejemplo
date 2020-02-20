@@ -1,0 +1,86 @@
+package com.microservices.example.app.report.controller;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.core.env.Environment;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
+import com.microservices.example.app.report.models.Report;
+import com.microservices.example.app.report.models.transaction;
+import com.microservices.example.app.report.models.service.ReportService;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+
+@RefreshScope
+@RestController
+public class ReportController {
+	
+	private static Logger log = LoggerFactory.getLogger(ReportController.class);
+	
+	@Autowired
+	private Environment env;
+	
+	@Autowired
+	@Qualifier("serviceFeign")
+	//@Qualifier("serviceRestTemplate")
+	private ReportService reportService;
+	
+	@Value("${configuracion.texto}")
+	private String texto;
+	
+	@GetMapping("/getReports")
+	public List<Report> getReports(){
+		return reportService.findAll();
+	}
+	
+	@HystrixCommand(fallbackMethod = "alternativeMethod")
+	@GetMapping("/getReport/{id}")
+	public Report getReport(@PathVariable Long id) {
+		return reportService.findById(id);
+	}
+	
+	public Report alternativeMethod(Long id) {
+		Report r = new Report();
+		transaction trx = new transaction();
+		trx.setAmount(0d);
+		trx.setCreatedAt(null);
+		trx.setDevice(0);
+		trx.setReference("");
+		r.setTrx(trx);
+		return r;
+	}
+	
+	@GetMapping("/getConfig")
+	public ResponseEntity<?> getConfig(@Value("${server.port}") String puerto){
+		log.info(texto);
+		Map<String, String> json = new HashMap<>();
+		json.put("texto", texto);
+		json.put("puerto", puerto);
+		
+		if(env.getActiveProfiles().length > 0
+				&& env.getActiveProfiles()[0].equals("dev")) {
+			json.put("autor.nombre", env.getProperty("configuracion.autor.nombre"));
+			json.put("autor.email", env.getProperty("configuracion.autor.email"));
+		}
+		
+		return new ResponseEntity<Map<String, String>>(json, HttpStatus.OK);
+	}
+	
+	@PostMapping("/telcelTrx")
+	@ResponseStatus(HttpStatus.CREATED)
+	public transaction crear(@RequestBody Producto producto) {
+		return itemService.save(producto);
+	}
+
+}

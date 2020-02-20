@@ -1,0 +1,16 @@
+package com.microservices.example.app.report.clientes;
+
+import java.util.List;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.microservices.example.app.report.models.transaction;
+
+@FeignClient(name="servicio-telcel0", url="localhost:8001")
+public interface TransactionClientRest {
+	
+	@GetMapping("getTransactions")
+	public List<transaction> getTransactions();
+
+}

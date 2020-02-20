@@ -1,0 +1,1 @@
+INSERT INTO trx (nombre, precio, create_at) VALUES('Alex',100,NOW());

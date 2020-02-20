@@ -1,0 +1,14 @@
+package com.microservices.example.app.telcel0.models.service;
+
+import java.util.List;
+
+import com.microservices.example.app.telcel0.models.trx.transaction;
+
+public interface ITrxService {
+	
+	public transaction save(transaction producto);
+	
+	public List<transaction> findAll(); 
+	public transaction findById(Long id);
+	
+}

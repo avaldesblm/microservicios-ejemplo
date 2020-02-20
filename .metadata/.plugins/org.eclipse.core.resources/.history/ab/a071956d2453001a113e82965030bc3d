@@ -1,0 +1,6 @@
+INSERT INTO transaction (devId, amount, transDateTime) VALUES('Panasonic',800,NOW());
+INSERT INTO transaction (devId, amount, transDateTime) VALUES('Sony',700,NOW());
+INSERT INTO transaction (devId, amount, transDateTime) VALUES('Apple',600,NOW());
+INSERT INTO transaction (devId, amount, transDateTime) VALUES('Nike',500,NOW());
+INSERT INTO transaction (devId, amount, transDateTime) VALUES('Adidas',400,NOW());
+INSERT INTO transaction (devId, amount, transDateTime) VALUES('Reebook',300,NOW());
