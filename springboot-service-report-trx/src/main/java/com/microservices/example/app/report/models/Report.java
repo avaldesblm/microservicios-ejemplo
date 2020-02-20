@@ -19,11 +19,21 @@ public class Report {
 	}
 	
 	public int getComission() {
+		Double amount = trx.getAmount();
+		if(amount == 0) {
+			return 0;
+		} else if(amount > 0 && amount <= 200) {
+			return 6;
+		} else {
+			return 5;
+		}
+		/*
 		if(trx.getAmount() <= 200) {
 			return 6;
 		} else {
 			return 5;
 		}
+		*/
 	}
 
 }

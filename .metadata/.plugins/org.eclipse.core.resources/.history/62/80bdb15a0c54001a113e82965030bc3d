@@ -1,0 +1,22 @@
+spring.application.name=servicio-zuul-server
+server.port=8090
+ 
+eureka.client.service-url.defaultZone=http://localhost:8761/eureka
+
+# Config the routes that points to the services
+zuul.routes.trx.service-id=servicio-telcel0
+zuul.routes.trx.path=/api/transactions/**
+
+zuul.routes.report.service-id=servicio-report
+zuul.routes.report.path=/api/reports/**
+
+
+# hystrix >= ribbon.ConnectTimeout + ribbon.ReadTimeout
+#hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 20000
+#ribbon.ConnectTimeout: 3000
+#ribbon.ReadTimeout: 10000
+
+# ZIPKIN CONFIG
+# Export always to Zipkin
+spring.sleuth.sampler.probability=1.0
+
